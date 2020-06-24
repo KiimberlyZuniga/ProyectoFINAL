@@ -16,7 +16,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        sigienteVentana = (Button)findViewById(R.id.nextActivity);
+        sigienteVentana = (Button)findViewById(R.id.nextActivityButton);
 
         sigienteVentana.setOnClickListener(new View.OnClickListener() {
             @Override

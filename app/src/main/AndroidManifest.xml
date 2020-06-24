@@ -9,6 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".PantallaUno_IncendioReportando"></activity>
+        <activity android:name=".PantallaDos_ReportarIncendio"></activity>
+        <activity android:name=".PantallaTres_IncendioPendiente"></activity>
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".PantallaDos_ReportarIncendio"
+    android:orientation="vertical">
+
+    <com.google.android.material.tabs.TabLayout
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_marginTop="12dp">
+
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Reportados"
+            android:id="@+id/tabReportados"/>
+
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Pendientes"
+            android:id="@+id/tabPendientes"/>
+
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Salir"
+            android:id="@+id/tabSalir"/>
+    </com.google.android.material.tabs.TabLayout>
+
+    <TextView
+        android:id="@+id/txtReporteYActualizacion"
+        android:layout_width="331dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="5dp"
+        android:text="REPORTE Y ACTUALIZACION"
+        android:textSize="24dp"
+        android:textStyle="bold"
+        android:orientation="horizontal"
+        />
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal"
+        android:text="DE INCENDIOS"
+        android:textSize="24dp"
+        android:textStyle="bold"
+        android:layout_gravity="center" ></TextView>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="140dp"
+        android:orientation="horizontal"
+        android:padding="20dp">
+
+
+        <ImageView
+            android:id="@+id/imagenV"
+            android:layout_width="175dp"
+            android:layout_height="128dp"
+            android:src="@drawable/fire"
+            android:layout_marginLeft="15dp"/>
+
+        <Button
+            android:id="@+id/botonTomarfoto"
+            android:layout_width="125dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="#B37033"
+            android:text="TOMAR FOTO">
+
+        </Button>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="67dp">
+
+        <EditText
+            android:id="@+id/usuarioTxt"
+            android:layout_width="210dp"
+            android:layout_height="40dp"
+            android:hint="USUARIO"
+            android:layout_marginLeft="60dp"
+            android:layout_gravity="center"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="67dp">
+
+        <Spinner
+            android:layout_width="212dp"
+            android:layout_height="55dp"
+            android:id="@+id/comboBoxSeveridad"
+            android:layout_marginLeft="60dp"
+            android:layout_gravity="center">
+        </Spinner>
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="67dp">
+
+        <Spinner
+            android:id="@+id/comboBoxCanton"
+            android:layout_width="212dp"
+            android:layout_height="67dp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="60dp"
+            android:hint="CANTÓN"></Spinner>
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="67dp">
+
+        <Spinner
+            android:layout_width="212dp"
+            android:layout_height="55dp"
+            android:id="@+id/comboBoxDistrito"
+            android:hint="DISTRITO"
+            android:layout_marginLeft="60dp"
+            android:layout_gravity="center">
+        </Spinner>
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="67dp">
+
+        <EditText
+            android:id="@+id/editTextFecha"
+            android:layout_width="212dp"
+            android:layout_height="55dp"
+            android:ems="8"
+            android:inputType="date"
+            android:hint="FECHA"
+            android:layout_marginLeft="60dp"
+            android:layout_gravity="center"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="67dp">
+
+
+        <Spinner
+            android:id="@+id/comboBoxEstadoAtencion"
+            android:layout_width="219dp"
+            android:layout_height="55dp"
+            android:hint="ESTADO"
+            android:layout_marginLeft="60dp"
+            android:layout_gravity="center"></Spinner>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="67dp"
+        android:orientation="horizontal">
+        <Button
+            android:id="@+id/buttonVerMaps"
+            android:layout_width="127dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="60dp"
+            android:text="Ver GMaps"></Button>
+        <Button
+            android:id="@+id/buttonGuardarSave"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="60dp"
+            android:layout_gravity="center"
+            android:text="SAVE"></Button>
+
+
+    </LinearLayout>
+
+</LinearLayout>

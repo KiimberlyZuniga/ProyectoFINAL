@@ -1,11 +1,24 @@
 package com.example.proyectofinal;
 
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class PantallaDos_ReportarIncendio extends AppCompatActivity {
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
+public class PantallaDos_ReportarIncendio extends AppCompatActivity {
+    private EditText usuario;
+    private EditText severidad;
+    private EditText canton;
+    private EditText distrito;
+    private EditText fecha;
+    private EditText estadoatencion;
+    private Button guardar;
+    private DatabaseReference mDtabase;
    // private static final int PERMISSION_CODE = 1000;
    /* ImageView photoo;
     Button capturePhotoo;
@@ -25,6 +38,36 @@ public class PantallaDos_ReportarIncendio extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pantalla_dos__reportar_incendio);
+
+        usuario = (EditText) findViewById(R.id.usuarioTxt);
+        severidad = (EditText) findViewById(R.id.editSeveridad);
+        canton = (EditText) findViewById(R.id.editTCanton);
+        distrito = (EditText) findViewById(R.id.editTDistrito);
+        fecha = (EditText) findViewById(R.id.editTextFecha);
+        estadoatencion = (EditText) findViewById(R.id.editTEstadoAtencion);
+        guardar = (Button) findViewById(R.id.buttonGuardarSave);
+
+        mDtabase = FirebaseDatabase.getInstance().getReference();
+
+        guardar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String  usu = usuario.getText().toString();
+                String  severi = severidad.getText().toString();
+                String  cant = canton.getText().toString();
+                String  dist = distrito.getText().toString();
+                String  fech = fecha.getText().toString();
+                String  estAten = estadoatencion.getText().toString();
+
+                mDtabase.child("usuario").setValue(usu);
+                mDtabase.child("severidad").setValue(severi);
+                mDtabase.child("canton").setValue(cant);
+                mDtabase.child("distrito").setValue(dist);
+                mDtabase.child("fecha").setValue(fech);
+                mDtabase.child("estado de atencion").setValue(estAten);
+
+            }
+        });
 
         //CAMARA
        // photoo = findViewById(R.id.imagenV);

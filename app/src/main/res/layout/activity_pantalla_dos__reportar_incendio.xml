@@ -33,12 +33,15 @@
 
     <TextView
         android:id="@+id/txtReporteYActualizacion"
-        android:layout_width="331dp"
+        android:layout_width="370dp"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="50dp"
+        android:layout_gravity="center"
+        android:textAlignment="center"
         android:layout_marginTop="5dp"
         android:text="REPORTE Y ACTUALIZACION"
-        android:textSize="24dp"
+        android:textSize="26dp"
+        android:fontFamily="cursive"
+        android:textColor="#000"
         android:textStyle="bold"
         android:orientation="horizontal"
         />
@@ -50,9 +53,11 @@
         android:gravity="center_horizontal"
         android:orientation="horizontal"
         android:text="DE INCENDIOS"
-        android:textSize="24dp"
+        android:fontFamily="cursive"
+        android:textColor="#000"
+        android:textSize="29dp"
         android:textStyle="bold"
-        android:layout_gravity="center" ></TextView>
+        android:layout_gravity="center" />
 
 
     <LinearLayout
@@ -82,7 +87,8 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="67dp">
+        android:layout_height="67dp"
+        >
 
         <EditText
             android:id="@+id/usuarioTxt"
@@ -96,13 +102,14 @@
         android:layout_width="match_parent"
         android:layout_height="67dp">
 
-        <Spinner
+        <EditText
             android:layout_width="212dp"
             android:layout_height="55dp"
-            android:id="@+id/comboBoxSeveridad"
+            android:id="@+id/editSeveridad"
+            android:hint="SEVERIDAD"
             android:layout_marginLeft="60dp"
             android:layout_gravity="center">
-        </Spinner>
+        </EditText>
     </LinearLayout>
 
 
@@ -110,27 +117,27 @@
         android:layout_width="match_parent"
         android:layout_height="67dp">
 
-        <Spinner
-            android:id="@+id/comboBoxCanton"
+        <EditText
+            android:id="@+id/editTCanton"
             android:layout_width="212dp"
             android:layout_height="67dp"
             android:layout_gravity="center"
             android:layout_marginLeft="60dp"
-            android:hint="CANTÓN"></Spinner>
+            android:hint="CANTÓN"/>
 
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="67dp">
 
-        <Spinner
+        <EditText
             android:layout_width="212dp"
             android:layout_height="55dp"
-            android:id="@+id/comboBoxDistrito"
+            android:id="@+id/editTDistrito"
             android:hint="DISTRITO"
             android:layout_marginLeft="60dp"
             android:layout_gravity="center">
-        </Spinner>
+        </EditText>
 
     </LinearLayout>
     <LinearLayout
@@ -153,14 +160,13 @@
         android:layout_width="match_parent"
         android:layout_height="67dp">
 
-
-        <Spinner
-            android:id="@+id/comboBoxEstadoAtencion"
+        <EditText
+            android:id="@+id/editTEstadoAtencion"
             android:layout_width="219dp"
             android:layout_height="55dp"
-            android:hint="ESTADO"
+            android:hint="ESTADO DE ATENCION"
             android:layout_marginLeft="60dp"
-            android:layout_gravity="center"></Spinner>
+            android:layout_gravity="center"/>
     </LinearLayout>
 
     <LinearLayout
@@ -173,14 +179,14 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginLeft="60dp"
-            android:text="Ver GMaps"></Button>
+            android:text="Ver GMaps"/>
         <Button
             android:id="@+id/buttonGuardarSave"
             android:layout_width="100dp"
             android:layout_height="wrap_content"
             android:layout_marginLeft="60dp"
             android:layout_gravity="center"
-            android:text="SAVE"></Button>
+            android:text="SAVE"/>
 
 
     </LinearLayout>

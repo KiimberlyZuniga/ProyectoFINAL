@@ -143,6 +143,7 @@ public class PantallaUno_IncendioReportando extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 if (snapshot.exists()){
+                    mIncendioArrayList.clear();
                     for (DataSnapshot ds: snapshot.getChildren()){
                         String incendio = ds.child("incendio").getValue().toString();
                         mIncendioArrayList.add(new Incendio(incendio));

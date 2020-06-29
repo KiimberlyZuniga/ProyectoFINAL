@@ -12,9 +12,7 @@
         <activity android:name=".PantallaTres_IncendioPendiente"></activity>
         <activity android:name=".PantallaUno_IncendioReportando" />
         <activity android:name=".PantallaDos_ReportarIncendio" />
-        <activity android:name=".Controlador.Contactanos" />
-        <activity android:name=".Controlador.Informacion" />
-        <activity android:name=".PantallaTres_IncendioPendientee" />
+
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

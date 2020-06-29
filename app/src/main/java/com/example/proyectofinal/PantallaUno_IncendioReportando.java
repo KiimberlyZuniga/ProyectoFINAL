@@ -7,12 +7,23 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.proyectofinal.adapters.IncendioAdapter;
+import com.example.proyectofinal.models.Incendio;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.ValueEventListener;
+
+import java.util.ArrayList;
 
 import static com.example.proyectofinal.R.layout.activity_pantalla_uno__incendio_reportando;
 
@@ -22,6 +33,12 @@ public class PantallaUno_IncendioReportando extends AppCompatActivity {
     TextView name, email;
     Button logOut;
     Button incendPendButt;
+
+    private DatabaseReference mDtabase;
+
+    private IncendioAdapter mIncendioAdapter;
+    private RecyclerView mRecyclerView;
+    private ArrayList<Incendio> mIncendioArrayList = new ArrayList<>();
     //TABS
    // TabLayout tabLayout;
     //ViewPager viewPager;
@@ -78,6 +95,10 @@ public class PantallaUno_IncendioReportando extends AppCompatActivity {
         botonFlotante = (FloatingActionButton) findViewById(R.id.BotonFlotante1);
         incendPendButt = (Button) findViewById(R.id.butIncendioPend);
 
+        mRecyclerView = (RecyclerView) findViewById(R.id.recyclerViewIncendios);
+
+        mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
+
         botonFlotante.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -114,6 +135,27 @@ public class PantallaUno_IncendioReportando extends AppCompatActivity {
             }
         });
 
+        getIncendioFromFirebase();
 
+    }
+    private void getIncendioFromFirebase(){
+        mDtabase.child("Incendios").addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                if (snapshot.exists()){
+                    for (DataSnapshot ds: snapshot.getChildren()){
+                        String incendio = ds.child("incendio").getValue().toString();
+                        mIncendioArrayList.add(new Incendio(incendio));
+                    }
+                    mIncendioAdapter = new IncendioAdapter(mIncendioArrayList, R.layout.incendios_view);
+                    mRecyclerView.setAdapter(mIncendioAdapter);
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
     }
 }

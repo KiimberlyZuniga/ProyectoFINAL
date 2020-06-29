@@ -6,9 +6,14 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.proyectofinal.adapters.IncendioAdapter;
+import com.example.proyectofinal.models.Incendio;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+
+import java.util.ArrayList;
 
 public class PantallaDos_ReportarIncendio extends AppCompatActivity {
     private EditText usuario;
@@ -19,6 +24,10 @@ public class PantallaDos_ReportarIncendio extends AppCompatActivity {
     private EditText estadoatencion;
     private Button guardar;
     private DatabaseReference mDtabase;
+
+    private IncendioAdapter mIncendioAdapter;
+    private RecyclerView mRecyclerView;
+    private ArrayList<Incendio> mIncendioArrayList = new ArrayList<>();
    // private static final int PERMISSION_CODE = 1000;
    /* ImageView photoo;
     Button capturePhotoo;
@@ -47,6 +56,8 @@ public class PantallaDos_ReportarIncendio extends AppCompatActivity {
         estadoatencion = (EditText) findViewById(R.id.editTEstadoAtencion);
         guardar = (Button) findViewById(R.id.buttonGuardarSave);
 
+
+
         mDtabase = FirebaseDatabase.getInstance().getReference();
 
         guardar.setOnClickListener(new View.OnClickListener() {
@@ -59,12 +70,12 @@ public class PantallaDos_ReportarIncendio extends AppCompatActivity {
                 String  fech = fecha.getText().toString();
                 String  estAten = estadoatencion.getText().toString();
 
-                mDtabase.child("usuario").setValue(usu);
-                mDtabase.child("severidad").setValue(severi);
-                mDtabase.child("canton").setValue(cant);
-                mDtabase.child("distrito").setValue(dist);
-                mDtabase.child("fecha").setValue(fech);
-                mDtabase.child("estado de atencion").setValue(estAten);
+                mDtabase.child("Datos").push().child("usu").setValue(usu);
+                mDtabase.child("Datos").push().child("severidad").setValue(severi);
+                mDtabase.child("Datos").push().child("canton").setValue(cant);
+                mDtabase.child("Datos").push().child("dist").setValue(dist);
+                mDtabase.child("Datos").push().child("fecha").setValue(fech);
+                mDtabase.child("Datos").push().child("est de ate").setValue(estAten);
 
             }
         });

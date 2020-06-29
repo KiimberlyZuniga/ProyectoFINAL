@@ -4,14 +4,50 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:orientation="vertical">
 
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="500dp"
+        android:layout_marginTop="20dp"
         android:id="@+id/nextActivityButton"
         android:text="Siguiente"></Button>
+    <ImageView
+        android:layout_width="127dp"
+        android:layout_height="95dp"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/logologo"
+        android:layout_gravity="center">
+    </ImageView>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Para Loggearte con google haz click en el boton"
+        android:textSize="22dp"
+        android:fontFamily="cursive"
+        android:layout_gravity="center"
+        android:textColor="#000"
+        android:textStyle="bold"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="100dp"/>
+
+    <com.google.android.gms.common.SignInButton
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/googleSignIn"
+        android:layout_marginTop="100dp"
+        android:textColor="#000"
+        android:layout_marginBottom="190dp"
+        android:layout_marginRight="0dp">
+
+    </com.google.android.gms.common.SignInButton>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="72dp"
+        android:layout_gravity="bottom"
+        android:src="@drawable/linefire" />
 
 </LinearLayout>
